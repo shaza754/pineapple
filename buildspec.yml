@@ -7,6 +7,7 @@ phases:
   build:
     commands:
       - echo "Starting SonarQube analysis..."
+      # Testing CI/CD webhook
       - mvn clean verify sonar:sonar -Dsonar.host.url=http://100.24.52.122:9000 -Dsonar.login=squ_1f10a940d15b6dd338dddaa5b6a59b78468b5c60
   post_build:
     commands:
@@ -15,3 +16,5 @@ phases:
 artifacts:
   files:
     - target/pineapple-1.0-SNAPSHOT.jar
+
+  
