@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Starting SonarQube analysis..."
       # Testing CI/CD webhook
-      - mvn clean verify sonar:sonar -Dsonar.host.url=http://100.24.52.122:9000 -Dsonar.login=squ_1f10a940d15b6dd338dddaa5b6a59b78468b5c60
+      - mvn clean verify sonar:sonar -Dsonar.host.url=http://ec2-34-238-232-89.compute-1.amazonaws.com:9000 -Dsonar.login=squ_1f10a940d15b6dd338dddaa5b6a59b78468b5c60
   post_build:
     commands:
       - echo "Build and SonarQube scan completed successfully!"
