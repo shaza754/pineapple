@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  build:
+    commands:
+      - echo "Starting SonarQube analysis..."
+      - mvn clean verify sonar:sonar -Dsonar.host.url=http://100.24.52.122:9000 -Dsonar.login=squ_1f10a940d15b6dd338dddaa5b6a59b78468b5c60
+  post_build:
+    commands:
+      - echo "Build and SonarQube scan completed successfully!"
+
+artifacts:
+  files:
+    - target/pineapple-1.0-SNAPSHOT.jar
